@@ -4,9 +4,8 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './users/entities/users.entity';
 import { Weather } from './api/entities/weather.entity';
-import { UsersModule } from './users/users.module';
+import { WeatherModule } from './weather/weather.module';
 
 @Module({
   imports: [
@@ -18,12 +17,12 @@ import { UsersModule } from './users/users.module';
       port: 5432,
       password: 'pg',
       username: 'pg',
-      entities: [User, Weather],
+      entities: [Weather],
       database: 'openweather',
       synchronize: true,
       logging: true,
     }),
-    UsersModule,
+    WeatherModule,
   ],
   controllers: [AppController],
   providers: [AppService],

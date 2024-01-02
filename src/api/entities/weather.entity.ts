@@ -28,7 +28,7 @@ export class Weather {
   @Column({ type: 'double precision' })
   humidity: number;
 
-  @Column({ type: 'timestamp', default: () => 'NOW()' })
+  @Column({ type: 'date', default: () => 'NOW()::date' })
   collectionDate: Date;
 
   @CreateDateColumn()
