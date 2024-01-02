@@ -6,6 +6,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Weather } from './api/entities/weather.entity';
 import { WeatherModule } from './weather/weather.module';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { WeatherModule } from './weather/weather.module';
       synchronize: true,
       logging: true,
     }),
+    ScheduleModule.forRoot(),
     WeatherModule,
   ],
   controllers: [AppController],
