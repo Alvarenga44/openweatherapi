@@ -33,4 +33,15 @@ export class Weather {
 
   @CreateDateColumn()
   created_at: Date;
+
+  constructor(weather?: Partial<Weather>) {
+    this.id = weather?.id;
+    this.city = weather?.city;
+    this.temperature = weather?.temperature;
+    this.max_temperature = weather?.max_temperature;
+    this.min_temperature = weather?.min_temperature;
+    this.humidity = weather?.humidity;
+    this.collectionDate = weather?.collectionDate;
+    this.created_at = weather?.created_at;
+  }
 }

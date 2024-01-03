@@ -37,7 +37,9 @@ export class ApiService {
 
     this.weatherRepository.save(weather);
 
-    return request;
+    return {
+      msg: 'São Paulo climate successfully collected',
+    };
   }
 
   async getWeatherCuritibaLocation() {
@@ -63,7 +65,9 @@ export class ApiService {
 
     this.weatherRepository.save(weather);
 
-    return request;
+    return {
+      msg: 'Curitiba climate successfully collected',
+    };
   }
 
   async getWeatherFloarianopolisLocation() {
@@ -89,6 +93,8 @@ export class ApiService {
 
     this.weatherRepository.save(weather);
 
-    return request;
+    return {
+      msg: 'Florianópolis climate successfully collected',
+    };
   }
 }
